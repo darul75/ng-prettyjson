@@ -23,12 +23,14 @@ How to use it
 You should already have a bunch of scripts and CSS required for Angular
 
 ```
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="ng-prettyjson.min.css">
 <script type="text/javascript" src="angular.min.js"></script>
 ```
 
 to the list above, you should add:
+
+```
+<link rel="stylesheet" type="text/css" href="ng-prettyjson.min.css">
+```
 
 ```
 <script type="text/javascript" src="ng-prettyjson.min"></script>
