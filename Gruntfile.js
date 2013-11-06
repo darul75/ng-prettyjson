@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       options: {
         keepSpecialComments: false,
         banner: '/** \n* @license <%= pkg.name %> - v<%= pkg.version %>\n' + 
-             '* (c) 2013 Julien VALERY http://\n' +
+             '* (c) 2013 Julien VALERY https://github.com/darul75/ng-prettyjson\n' +
              '* License: MIT \n**/\n'
       },
       compress: {
