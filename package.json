@@ -1,0 +1,39 @@
+{
+  "name": "ng-prettyjson",
+  "description": "AngularJS directive for json pretty output (colors and indent)",
+  "version": "0.0.1",
+  "filename": "./src/ng-bs-daterangepicker.js",
+  "homepage": "http://github.com/luisfarzati/ng-bs-daterangepicker",
+  "author": {
+    "name": "Luis Farzati",
+    "email": "lfarzati@gmail.com",
+    "url": "http://github.com/luisfarzati"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luisfarzati/ng-bs-daterangepicker.git"
+  },
+  "keywords": [
+    "angular",
+    "json",
+    "pretty",
+    "color",
+    "format"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/karma start test/my.conf.js"
+  },
+  "bugs": {
+    "url": "http://github.com/luisfarzati/ng-bs-daterangepicker/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-karma": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "karma": "~0.10"
+  }
+}
