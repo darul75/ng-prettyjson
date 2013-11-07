@@ -1,5 +1,6 @@
 ng-prettyjson
 =====================
+[![Build Status](https://travis-ci.org/darul75/ng-prettyjson.png?branch=master)](https://travis-ci.org/darul75/ng-prettyjson)
 
 Angular directive for JSON pretty display output, indent and colorized.
 
