@@ -1,6 +1,6 @@
 (function (angular) {
 'use strict';
-	angular.module('app', []).directive('prettyJson', function () {
+	angular.module('ngPrettyJson', []).directive('prettyJson', function () {
 
 		// http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript
 		var syntaxHighlight =function(json) {
