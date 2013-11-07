@@ -1,7 +1,7 @@
 describe('test valid json', function () {
 	var $ngCompile, $ngRootScope;
 
-	beforeEach(module('app'));
+	beforeEach(module('ngPrettyJson'));
 
 	beforeEach(inject(function ($compile, $rootScope) {
 		
