@@ -18,7 +18,11 @@
   <body>
 
     <div ng-app='app' ng-controller='ctrl'>
-      <pre json='json' pretty-json />
+      <div>
+  			<pre json='json' pretty-json />
+  		</div>		
+  			<pre json='json2' pretty-json />
+  		</div>
     </div>
 
     <script type="text/javascript"> 
@@ -26,6 +30,87 @@
       var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
       // var obj = function() {};
       $scope.json = { json: obj };
+      
+      	var o2 = { 
+				socket: 
+			      { domain: null,
+			        _events: [Object],
+			        _maxListeners: 10,
+			        _handle: [Object],
+			        _pendingWriteReqs: 0,
+			        _flags: 0,
+			        _connectQueueSize: 0,
+			        destroyed: false,
+			        errorEmitted: false,
+			        bytesRead: 197,
+			        _bytesDispatched: 123,
+			        allowHalfOpen: undefined,
+			        _connecting: false,
+			        writable: true,
+			        parser: [Object],			        
+			        _connectQueue: null,
+			        readable: true },
+			     connection: 
+			      { domain: null,
+			        _events: [Object],
+			        _maxListeners: 10,
+			        _handle: [Object],
+			        _pendingWriteReqs: 0,
+			        _flags: 0,
+			        _connectQueueSize: 0,
+			        destroyed: false,
+			        errorEmitted: false,
+			        bytesRead: 197,
+			        _bytesDispatched: 123,
+			        allowHalfOpen: undefined,
+			        _connecting: false,
+			        writable: true,
+			        parser: [Object],			        
+			        _connectQueue: null,
+			        readable: true },
+
+           res: 
+            { domain: null,
+              _events: [Object],
+              _maxListeners: 10,
+              socket: [Object],
+              connection: [Object],
+              httpVersion: '1.1',
+              complete: true,
+              headers: [Object],
+              trailers: {},
+              readable: false,
+              _paused: false,
+              _pendings: [],
+              _endEmitted: false,
+              url: '',
+              method: null,
+              statusCode: 200,
+              client: [Object],
+              httpVersionMajor: 1,
+              httpVersionMinor: 1,
+              upgrade: false,
+              text: '<p>hello world baby with no compile</p>',
+              _decoder: [Object],              
+              body: undefined },
+        statusCode: 200,
+        status: 200,
+        statusType: 2,
+        info: false,
+        ok: true,
+        redirect: false,
+        clientError: false,
+        serverError: false,
+        error: false,
+        accepted: false,
+        noContent: false,
+        badRequest: false,
+        unauthorized: false,
+        notAcceptable: false,
+        forbidden: false,
+        notFound: false }
+  
+      	$scope.json2 = { json: o2 };
     }
     </script>
 
