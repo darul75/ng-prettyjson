@@ -3,9 +3,9 @@ ng-prettyjson [![NPM version](https://badge.fury.io/js/ng-prettyjson.png)](http:
 
 Angular directive for JSON pretty display output, indent and colorized.
 
-Idea was given by need to see some configuration files in a back office.
+Idea was given by the need to display some configuration JSON format files in a back office.
 
-Using this example on stackoverflow
+Inspired by this from stackoverflow
 [pretty json javascript](http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript)
 
 Demo
