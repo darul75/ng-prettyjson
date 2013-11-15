@@ -52,28 +52,28 @@ Then, inject `ngPrettyJson` in your application module:
 angular.module('myApp', ['ngPrettyJson']);
 ```
 
-and then just add an `pre` with `pretty-json` directive name attribute and `json` scope variable attribute.
+and then just add an `pre` with `pretty-json` directive name attribute and `jsonObj` scope variable attribute.
 
 ```html
-<pre json='jsonObject' pretty-json />
+<pre json='jsonObj' pretty-json />
 ```
 
-`jsonObject` is your scope json variable.
+`jsonObj` is your scope json variable.
 
 ```javascript
 var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
-$scope.json = { json: obj };
+$scope.jsonObj = { json: obj };
 ```
 
 ### Attribute
 
-* `json`: scope json variable object
+* `jsonObj`: scope json variable object
 
 Example with all above features:
 
 ```html
 <div ng-app='myApp' ng-controller='ctrl'>
-  <pre json='json' pretty-json />
+  <pre json='jsonObj' pretty-json />
 </div>
 ```
 
