@@ -43,7 +43,7 @@ to the list above, you should add:
 ```
 
 ```html
-<script type="text/javascript" src="ng-prettyjson.min"></script>
+<script type="text/javascript" src="ng-prettyjson.min.js"></script>
 ```
 
 Then, inject `ngPrettyJson` in your application module:
