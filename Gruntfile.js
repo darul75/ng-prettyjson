@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['src/ng-prettyjson.js', 'test/**/*.js']
+      files: ['src/ng-twitter.js', 'test/**/*.js']
     },
     // KARMA TASK CONFIG
     karma: {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           files: [            
             'src/bower_components/angular/angular.js',
             'src/bower_components/angular-mocks/angular-mocks.js',                                    
-            'src/ng-prettyjson.js',
+            'src/ng-twitter.js',
             'test/**/*Spec.js']
         }
       }
@@ -31,11 +31,11 @@ module.exports = function(grunt) {
             preserveComments: 'some',
             report: 'min',
             banner: '/** \n* @license <%= pkg.name %> - v<%= pkg.version %>\n' + 
-             '* (c) 2013 Julien VALERY https://github.com/darul75/ng-prettyjson\n' +
+             '* (c) 2013 Julien VALERY https://github.com/darul75/ng-twitter\n' +
              '* License: MIT \n**/\n'
          },         
          files: {
-             'dist/ng-prettyjson.min.js': ['src/ng-prettyjson.js']
+             'dist/ng-twitter.min.js': ['src/ng-twitter.js']
          }
        }
      },
@@ -44,12 +44,12 @@ module.exports = function(grunt) {
       options: {
         keepSpecialComments: false,
         banner: '/** \n* @license <%= pkg.name %> - v<%= pkg.version %>\n' + 
-             '* (c) 2013 Julien VALERY https://github.com/darul75/ng-prettyjson\n' +
+             '* (c) 2013 Julien VALERY https://github.com/darul75/ng-twitter\n' +
              '* License: MIT \n**/\n'
       },
       compress: {
         files: {          
-          'dist/ng-prettyjson.min.css': ['src/ng-prettyjson.css']
+          'dist/ng-twitter.min.css': ['src/ng-twitter.css']
         }
       }
   }
@@ -62,5 +62,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   // TASK REGISTER
-  grunt.registerTask('default', ['jshint', 'cssmin', 'uglify:task1', 'karma']);
+  //grunt.registerTask('default', ['jshint', 'cssmin', 'uglify:task1', 'karma']);
+  grunt.registerTask('default', ['jshint', 'cssmin', 'uglify:task1']);
 };

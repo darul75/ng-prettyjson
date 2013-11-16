@@ -1,29 +1,28 @@
 {
-  "name": "ng-prettyjson",
-  "description": "AngularJS directive for json pretty output (colors and indent)",
-  "version": "0.0.2",
+  "name": "ng-twitter",
+  "description": "AngularJS directive twitter tweets addict display.",
+  "version": "0.0.1",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
   },
-  "filename": "./src/ng-prettyjson.js",
-  "homepage": "https://github.com/darul75/ng-prettyjson",
+  "filename": "./src/ng-twitter.js",
+  "homepage": "https://github.com/darul75/ng-twitter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darul75/ng-prettyjson.git"
+    "url": "https://github.com/darul75/ng-twitter.git"
   },
   "keywords": [
     "angular",
-    "json",
+    "twitter",
     "pretty",
-    "color",
-    "format"
+    "hashtag"    
   ],
   "scripts": {
     "test": "./node_modules/.bin/karma start test/my.conf.js"
   },
   "bugs": {
-    "url": "https://github.com/darul75/ng-prettyjson/issues"
+    "url": "https://github.com/darul75/ng-twitter/issues"
   },
   "dependencies": {
   },

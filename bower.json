@@ -1,0 +1,12 @@
+{
+  "name": "ng-tweeter",
+  "version": "0.0.1",
+  "main": "./src/ng-twitter.js",
+  "dependencies": {
+    "angular": "1.2.x",    
+    "angular-sanitize": "1.2.x"    
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.x"
+  }
+}

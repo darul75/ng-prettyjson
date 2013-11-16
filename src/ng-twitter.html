@@ -1,0 +1,24 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="ng-twitter.css">
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>	
+	<script type="text/javascript" src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>	
+	<script type="text/javascript" src="ng-twitter.js"></script>
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="ctrl">
+		<div tweets key="authKey" hashtag="hashtag" button="true" count="15" refresh="60"/>		
+	</div>
+
+	<script type="text/javascript">	
+
+		angular.module('myApp', ['ngTwitter']);
+
+		function ctrl($scope, $filter) {			
+			$scope.authKey = 'bzJZSlN4ZnJUYWhyeXdub2R4MzJBOkFHSmw5MnJIeEFTRkpYVW9BSm8zMEpTQzU2Wm0zNFZxZmFVZFh1TUZWamc=';
+			$scope.hashtag = 'football';
+		}
+
+	</script>
+
+</body>
