@@ -4,6 +4,11 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    bower: {
+      install: {
+         //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+      }
+    },
     jshint: {
       files: ['src/ng-prettyjson.js', 'test/**/*.js']
     },
@@ -56,11 +61,12 @@ module.exports = function(grunt) {
 });
 
   // LOAD PLUGINS
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-karma');
 
   // TASK REGISTER
-  grunt.registerTask('default', ['jshint', 'cssmin', 'uglify:task1', 'karma']);
+  grunt.registerTask('default', ['bower', 'jshint', 'cssmin', 'uglify:task1', 'karma']);
 };
