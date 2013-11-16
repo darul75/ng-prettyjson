@@ -1,24 +1,21 @@
-ng-twitter [![NPM version](https://badge.fury.io/js/ng-twitter.png)](http://badge.fury.io/js/ng-twitter) [![Build Status](https://travis-ci.org/darul75/ng-twitter.png?branch=master)](https://travis-ci.org/darul75/ng-twitter)
+ng-prettyjson [![NPM version](https://badge.fury.io/js/ng-prettyjson.png)](http://badge.fury.io/js/ng-prettyjson) [![Build Status](https://travis-ci.org/darul75/ng-prettyjson.png?branch=master)](https://travis-ci.org/darul75/ng-prettyjson)
 =====================
 
-<<<<<<< HEAD
-Angular directive tweets display.
-=======
 Angular directive for JSON pretty display output, indent and colorized.
 
 Idea was given by the need to display some configuration JSON format files in a back office.
 
 Inspired by this from stackoverflow
 [pretty json javascript](http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript)
->>>>>>> 5b15f5daf533923bfe5e6f280fcdad33010e98b3
 
 Demo
 ------------
-http://darul75.github.io/ng-twitter/
+http://darul75.github.io/ng-prettyjson/
 
 
 Screenshot
 ------------
+![pretty json screenshot](http://darul75.github.io/ng-prettyjson/images/capture.png "pretty json screenshot")
 
 Installation
 ------------
@@ -26,8 +23,9 @@ Installation
 Using npm:
 
 ```
-npm install ng-twitter
+npm install ng-prettyjson
 ```
+
 
 How to use it
 -------------
@@ -41,32 +39,19 @@ You should already have script required for Angular
 to the list above, you should add:
 
 ```html
-<link rel="stylesheet" type="text/css" href="ng-twitter.min.css">
+<link rel="stylesheet" type="text/css" href="ng-prettyjson.min.css">
 ```
 
 ```html
-<<<<<<< HEAD
-<script type="text/javascript" src="ng-twitter.min.js"></script>
-
-Then, inject `ngTwitter` in your application module:
-
-```javascript
-angular.module('myApp', ['ngTwitter']);
+<script type="text/javascript" src="ng-prettyjson.min.js"></script>
 ```
 
-<<<<<<< HEAD
-and then just add an `div` with `pretty-json` directive name attribute and `json` scope variable attribute.
-
-```html
-<div tweets key="authKey" hashtag="hashtag" button="true" count="15" refresh="60"/>
-```
-
-`authKey` is your scope authentication key variable.
+Then, inject `ngPrettyJson` in your application module:
 
 ```javascript
-$scope.authKey = 'bzJZSlN4ZnJUYWhyeXdub2R4MzJBOkFHSmw5MnJIeEFTRkpYVW9BSm8zMEpTQzU2Wm0zNFZxZmFVZFh1TUZWamc=';
-$scope.hashtag = 'football';
-=======
+angular.module('myApp', ['ngPrettyJson']);
+```
+
 and then just add an `pre` with `pretty-json` directive name attribute and `jsonObj` scope variable attribute.
 
 ```html
@@ -77,26 +62,18 @@ and then just add an `pre` with `pretty-json` directive name attribute and `json
 
 ```javascript
 var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
+$scope.jsonObj = { json: obj };
 ```
 
 ### Attribute
 
-* `key`: scope json variable object
-* `key`: scope json variable object
-* `key`: scope json variable object
-* `key`: scope json variable object
-* `key`: scope json variable object
+* `jsonObj`: scope json variable object
 
 Example with all above features:
 
 ```html
-<<<<<<< HEAD
-<div ng-app="myApp" ng-controller="ctrl">
-	<div tweets key="authKey" hashtag="hashtag" button="true" count="5" refresh="10"/>		
-=======
 <div ng-app='myApp' ng-controller='ctrl'>
   <pre json='jsonObj' pretty-json />
->>>>>>> 5b15f5daf533923bfe5e6f280fcdad33010e98b3
 </div>
 ```
 
