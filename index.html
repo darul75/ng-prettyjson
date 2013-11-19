@@ -4,12 +4,12 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Ng-prettyjson : AngularJS directive for pretty json display" />
+    <meta name="description" content="Ng-prettyjson : Angular directive for JSON pretty display output, indent and colorized." />
 
-    
-    <link rel="stylesheet" type="text/css" href="javascripts/ng-prettyjson.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="javascripts/ng-prettyjson.min.css">
 
-    <script type="text/javascript" src="src/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="src/bower_components/angular/angular.min.js"></script>    
     <script type="text/javascript" src="javascripts/ng-prettyjson.min.js"></script>
 
     <title>Ng-prettyjson</title>
@@ -17,13 +17,45 @@
 
   <body>
 
-    <div ng-app='app' ng-controller='ctrl'>
-      <div>
-  			<pre json='json' pretty-json />
-  		</div>		
-  			<pre json='json2' pretty-json />
-  		</div>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/darul75/ng-prettyjson">View on GitHub</a>
+
+          <h1 id="project_title">Ng-prettyjson</h1>
+          <h2 id="project_tagline">Angular directive pretty json display</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/darul75/ng-prettyjson/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/darul75/ng-prettyjson/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
     </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome</h3>
+
+<p>Just 2 samples here.</p>
+
+
+<div ng-app='app' ng-controller='ctrl'>
+
+  <h2>Small json</h2>
+
+    <div>
+      <pre json='json' pretty-json />
+    </div>
+
+  <h2>Bigger json</h2>
+
+    <div>
+  		<pre json='json2' pretty-json />
+  	</div>
+
+</div>
 
     <script type="text/javascript"> 
     function ctrl($scope, $filter) {
@@ -113,6 +145,26 @@
       	$scope.json2 = { json: o2 };
     }
     </script>
+
+        <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ng-twitter maintained by <a href="https://github.com/darul75">darul75</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("ng-prettyjson");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
