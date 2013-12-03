@@ -7,10 +7,12 @@
     <meta name="description" content="Ng-prettyjson : Angular directive for JSON pretty display output, indent and colorized." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/prism.css">
     <link rel="stylesheet" type="text/css" media="screen" href="javascripts/ng-prettyjson.min.css">
 
     <script type="text/javascript" src="src/bower_components/angular/angular.min.js"></script>    
     <script type="text/javascript" src="javascripts/ng-prettyjson.min.js"></script>
+    <script type="text/javascript" src="javascripts/prism.js"></script>
 
     <title>Ng-prettyjson</title>
   </head>
@@ -32,6 +34,7 @@
         </header>
     </div>
 
+
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
@@ -46,8 +49,35 @@
   <h2>Small json</h2>
 
     <div>
-      <pre json='json' pretty-json />
+      <pre class='json' json='json' pretty-json />
     </div>
+  <h3>Code</h3>  
+<div class="language-markup">
+  <pre><code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  ...</code>
+  <code class="highlight">&lt;link href="css/ng-prettyjson.min.css" rel="stylesheet" /></code>
+  <code class="highlight">&lt;script type="javascripts/ng-prettyjson.min.js" src="css/ng-prettyjson.min.css" /></code>
+<code>&lt;/head>
+&lt;body>
+  ...</code>
+  <code>
+  &lt;div>
+    &lt;pre class='json' json='json' pretty-json />
+  &lt;/div>
+  </code>
+  <code class="highlight">
+  &lt;script>
+    function ctrl($scope) {
+        var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};      
+        $scope.json = { json: obj };     
+    }   
+  &lt;/script>
+  </code>    
+<code>&lt;/body>
+&lt;/html></code></pre>
+</div>
 
   <h2>Bigger json</h2>
 
@@ -63,8 +93,10 @@
 
 </div>
 
+
+
     <script type="text/javascript"> 
-    function ctrl($scope, $filter) {
+    function ctrl($scope) {
       var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
       // var obj = function() {};
       $scope.json = { json: obj };

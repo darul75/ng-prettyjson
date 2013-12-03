@@ -58,7 +58,7 @@ body {
   font-size: 16px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  /*-webkit-font-smoothing: antialiased;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -151,7 +151,7 @@ img {
   -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
-pre, code {
+pre {
   width: 100%;
   color: #222;
   background-color: #fff;
@@ -162,12 +162,9 @@ pre, code {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-
-
-
 }
 
-pre {
+/*pre {
   width: 100%;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
@@ -184,7 +181,7 @@ pre code {
   display: block;
   box-shadow: none;
 }
-
+*/
 blockquote {
   color: #666;
   margin-bottom: 20px;
@@ -260,7 +257,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 800px;
   padding: 20px 10px;
   margin: 0 auto;
 }
