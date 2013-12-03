@@ -1,6 +1,6 @@
 {
-  "name": "ng-tweeter",
-  "version": "0.0.3",
+  "name": "ng-prettyjson",
+  "version": "0.0.4",
   "main": "./src/ng-prettyjson.js",
   "dependencies": {
     "angular": "1.2.x" 
