@@ -27,80 +27,81 @@
 
           <h1 id="project_title">Ng-prettyjson</h1>
           <p>Angular directive pretty json display</p>
-
-            <ul>
-              <li>
-                <a href="https://github.com/darul75/ng-prettyjson/zipball/master">Download <strong>Zip File</strong></a>
-              </li>
-              <li>  
-                <a href="https://github.com/darul75/ng-prettyjson/tarball/master">Download <strong>Tar ball</strong></a>
-              </li>
-              <li>
-                <a href="https://github.com/darul75/ng-prettyjson">View on <strong>GitHub</strong></a>
-              </li>  
-            </ul>
+          <ul>
+            <li>
+              <a href="https://github.com/darul75/ng-prettyjson/zipball/master">Download <strong>Zip File</strong></a>
+            </li>
+            <li>  
+              <a href="https://github.com/darul75/ng-prettyjson/tarball/master">Download <strong>Tar ball</strong></a>
+            </li>
+            <li>
+              <a href="https://github.com/darul75/ng-prettyjson">View on <strong>GitHub</strong></a>
+            </li>  
+          </ul>
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-      <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome</h3>
+        <h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome</h3>
 
-<p>Just 2 samples here.</p>
+        <p>Just 2 samples here.</p>
 
-<div ng-app='app' ng-controller='ctrl'>
+        <div ng-app='app' ng-controller='ctrl'>
 
-  <h2>Small json</h2>
+            <h2>Small json</h2>
 
-    <div>
-      <pre class='json' json='json' pretty-json />
+            <div>
+              <pre class='json' json='json' pretty-json />
+            </div>
+
+            <h3>Code</h3>  
+            <div class="language-markup">
+              <pre><code>&lt;!DOCTYPE html>
+            &lt;html>
+            &lt;head>
+              ...</code>
+              <code class="highlight">&lt;link href="css/ng-prettyjson.min.css" rel="stylesheet" /></code>
+              <code class="highlight">&lt;script type="javascripts/javascript" src="angular.min.js" /></code>
+              <code class="highlight">&lt;script type="javascripts/javascript" src="ng-prettyjson.min.js" /></code>
+            <code>&lt;/head>
+            &lt;body>
+              ...</code>
+              <code>
+              &lt;div>
+                &lt;pre class='json' json='json' pretty-json />
+              &lt;/div>
+              </code>
+              <code class="highlight">
+              &lt;script>
+                function ctrl($scope) {
+                    var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};      
+                    $scope.json = { json: obj };     
+                }   
+              &lt;/script>
+              </code>    
+            <code>&lt;/body>
+            &lt;/html></code></pre>
+            </div>
+
+            <h2>Bigger json</h2>
+
+            <div>
+          	<pre json='json2' pretty-json />
+            </div>
+
+            <h2>Donate</h2>   
+              <div>
+              	<script data-gittip-username="darul75"
+                  data-gittip-widget="button"
+                  src="//gttp.co/v1.js"></script>
+              </div>
+          
+        </div>
+
+      </section>
     </div>
-  <h3>Code</h3>  
-<div class="language-markup">
-  <pre><code>&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  ...</code>
-  <code class="highlight">&lt;link href="css/ng-prettyjson.min.css" rel="stylesheet" /></code>
-  <code class="highlight">&lt;script type="javascripts/javascript" src="angular.min.js" /></code>
-  <code class="highlight">&lt;script type="javascripts/javascript" src="ng-prettyjson.min.js" /></code>
-<code>&lt;/head>
-&lt;body>
-  ...</code>
-  <code>
-  &lt;div>
-    &lt;pre class='json' json='json' pretty-json />
-  &lt;/div>
-  </code>
-  <code class="highlight">
-  &lt;script>
-    function ctrl($scope) {
-        var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};      
-        $scope.json = { json: obj };     
-    }   
-  &lt;/script>
-  </code>    
-<code>&lt;/body>
-&lt;/html></code></pre>
-</div>
-
-  <h2>Bigger json</h2>
-
-    <div>
-  	<pre json='json2' pretty-json />
-    </div>
-
-  <h2>Donate</h2>   
-    <div>
-    	<script data-gittip-username="darul75"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script>
-    </div>
-  
-</div>
-
 
 
     <script type="text/javascript"> 
@@ -203,7 +204,7 @@
             } catch(err) {}
     </script>
 
-  </div>
+
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
@@ -212,6 +213,7 @@
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>  
-   </div> 
+   
+   </div>
   </body>
 </html>
