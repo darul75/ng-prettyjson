@@ -32,7 +32,7 @@
 					elm.html(syntaxHighlight(newValue.json));
 				else
 					elm.html('value is not a valid json object {}');
-				});
+				}, true);
 			}
 		};
 	});
