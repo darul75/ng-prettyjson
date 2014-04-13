@@ -1,4 +1,4 @@
-ng-prettyjson [![NPM version](https://badge.fury.io/js/ng-prettyjson.png)](http://badge.fury.io/js/ng-prettyjson) [![Build Status](https://travis-ci.org/darul75/ng-prettyjson.png?branch=master)](https://travis-ci.org/darul75/ng-prettyjson) [![Total views](https://sourcegraph.com/api/repos/github.com/darul75/ng-prettyjson/counters/views.png)](https://sourcegraph.com/github.com/darul75/ng-prettyjson)
+ng-prettyjson [![NPM version](https://badge.fury.io/js/ng-prettyjson.png)](http://badge.fury.io/js/ng-prettyjson) [![Build Status](https://travis-ci.org/darul75/ng-prettyjson.png?branch=master)](https://travis-ci.org/darul75/ng-prettyjson) [![Total views](https://sourcegraph.com/api/repos/github.com/darul75/ng-prettyjson/counters/views.png)](https://sourcegraph.com/github.com/darul75/ng-prettyjson) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/darul75/ng-prettyjson/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 =====================
 
 Angular directive for JSON pretty display output, indent and colorized.
