@@ -20,18 +20,11 @@ Screenshot
 Installation
 ------------
 
-Using npm:
-
-```
-npm install ng-prettyjson
-```
-
-Using bower:
+Using [Bower](http://bower.io):
 
 ```
 bower install ng-prettyjson
 ```
-
 
 How to use it
 -------------
@@ -52,35 +45,30 @@ to the list above, you should add:
 <script type="text/javascript" src="ng-prettyjson.min.js"></script>
 ```
 
-Then, inject `ngPrettyJson` in your application module:
+Then, require `ngPrettyJson` in your application module:
 
 ```javascript
 angular.module('myApp', ['ngPrettyJson']);
 ```
 
-and then just add an `pre` with `pretty-json` directive name attribute and `jsonObj` scope variable attribute.
+and then just add a `pre` with `pretty-json` directive:
 
 ```html
-<pre json='jsonObj' pretty-json />
+<pre pretty-json="jsonObj" />
 ```
 
-`jsonObj` is your scope json variable.
+`jsonObj` is a variable on the scope to be output as JSON:
 
 ```javascript
-var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
-$scope.jsonObj = { json: obj };
+$scope.jsonObj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
 ```
 
-### Attribute
+### Tag Usage
 
-* `jsonObj`: scope json variable object
-
-Example with all above features:
+Alternatively, you can use a `<pretty-json>` tag.  This tag will be replaced with a `<pre>`:
 
 ```html
-<div ng-app='myApp' ng-controller='ctrl'>
-  <pre json='jsonObj' pretty-json />
-</div>
+<pretty-json json="jsonObj"></pretty-json>
 ```
 
 ### Build
@@ -90,7 +78,7 @@ You can run the tests by running
 ```
 npm install
 ```
-or
+and
 ```
 npm test
 ```

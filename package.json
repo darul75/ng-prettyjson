@@ -1,7 +1,7 @@
 {
   "name": "ng-prettyjson",
   "description": "AngularJS directive for json pretty output (colors and indent)",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
@@ -20,7 +20,7 @@
     "format"
   ],
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start test/my.conf.js"
+    "test": "grunt test-continuous"
   },
   "bugs": {
     "url": "https://github.com/darul75/ng-prettyjson/issues"
@@ -28,7 +28,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "latest",
-    "grunt-karma": "latest",
+    "grunt-karma": "~0.8.2",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "~0.6.0",
