@@ -32,7 +32,7 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "~0.6.0",
-    "karma": "0.12.12",
+    "karma": "^0.12.12",
     "grunt-bower-task": "~0.3.4"
   }
 }
