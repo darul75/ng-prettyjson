@@ -26,6 +26,12 @@ Using npm:
 npm install ng-prettyjson
 ```
 
+Using bower:
+
+```
+bower install ng-prettyjson
+```
+
 
 How to use it
 -------------
