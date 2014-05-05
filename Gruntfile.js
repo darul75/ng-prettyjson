@@ -14,20 +14,28 @@ module.exports = function(grunt) {
     },
     // KARMA TASK CONFIG
     karma: {
-      unit: {
         options: {
-          basePath: './',
-          frameworks: ['jasmine'],
-          browsers: ['Chrome'],
-          autoWatch: true,
-          singleRun: true,
-          files: [            
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',                                    
-            'src/ng-prettyjson.js',
-            'test/**/*Spec.js']
+            basePath: './',
+            frameworks: ['jasmine'],
+            files: [
+                'lib/angular/angular.js',
+                'lib/angular-mocks/angular-mocks.js',
+                'src/ng-prettyjson.js',
+                'test/**/*Spec.js'
+            ]
+        },
+        unit: {
+            options: {
+                browsers: ['Chrome'],
+                autoWatch: true
+            }
+        },
+        continuous: {
+            options: {
+                browsers: ['PhantomJS'],
+                singleRun: true
+            }
         }
-      }
     },
     // UGLIFY TASK
     uglify: {
@@ -68,5 +76,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   // TASK REGISTER
-  grunt.registerTask('default', ['bower', 'jshint', 'cssmin', 'uglify:task1', 'karma']);
+    grunt.registerTask('test', ['jshint', 'bower', 'karma:unit']);
+    grunt.registerTask('test-continuous', ['jshint', 'bower', 'karma:continuous']);
+    grunt.registerTask('build', ['cssmin', 'uglify']);
+    grunt.registerTask('default', ['build', 'test']);
 };

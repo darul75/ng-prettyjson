@@ -1,0 +1,24 @@
+<html>
+<!-- to run this demo, execute "bower install" first -->
+<head>
+	<link rel="stylesheet" type="text/css" href="../src/ng-prettyjson.css"/>
+	<script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../src/ng-prettyjson.js"></script>
+</head>
+<body>
+
+	<div ng-app='myApp' ng-controller='ctrl'>
+		<pretty-json json="obj"></pretty-json>
+	</div>
+
+	<script type="text/javascript">	
+
+		angular.module('myApp', ['ngPrettyJson']);
+
+        function ctrl($scope) {
+            $scope.obj = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}]};
+        }
+	</script>
+
+</body>
+</html>
