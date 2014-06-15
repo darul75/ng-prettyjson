@@ -41,7 +41,7 @@ module.exports = function(grunt) {
     uglify: {
       task1: {
          options: {
-            preserveComments: 'some',
+            preserveComments: 'all',
             report: 'min',
             banner: '/** \n* @license <%= pkg.name %> - v<%= pkg.version %>\n' + 
              '* (c) 2013 Julien VALERY https://github.com/darul75/ng-prettyjson\n' +

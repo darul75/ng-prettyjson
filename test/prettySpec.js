@@ -18,8 +18,8 @@ describe('ngPrettyJson', function () {
             return function tester(markup, nodeCount) {
                 var element = $compile(markup)(scope);
                 scope.$apply();
-                expect(element.children('span').length).toBe(nodeCount || 0);
-                expect(element[0].tagName).toBe('PRE');
+                expect(element.find('pre').children('span').length).toBe(nodeCount || 0);
+                //expect(element[0].tagName).toBe('PRE');
                 return element;
             };
         },
@@ -57,7 +57,7 @@ describe('ngPrettyJson', function () {
         it('ignores updates to the root object if it has a json property', function () {
             var element = testDirective('<pre pretty-json="json"></pre>', 11);
             scope.$apply("json.f = 'bar'");
-            expect(element.children('span').length).toBe(11);
+            expect(element.find('pre').children('span').length).toBe(11);
         });
 
         it('zaps markup if empty', function () {

@@ -11,13 +11,23 @@ angular.module('ngPrettyJson', [])
                 prettyJson: '='
             },
             replace: true,
-            template: '<pre></pre>',
+            template: '<div>' + 
+                        '<button ng-click="edit()" ng-show="edition && !editActivated">Edit</button>' +
+                        '<button ng-click="edit()" ng-show="edition && editActivated">Cancel</button>' +
+                        '<button ng-click="update()" ng-show="editActivated && parsable">Update</button>' +
+                        '<pre id="prettyjson"></pre>' +                        
+                    '</div>',
             link: function (scope, elm, attrs) {
+                var currentValue = {}, id = 'prettyjson', editor = null;
+                
+                scope.editActivated = false;
+                scope.edition = attrs.edition;    
+
                 // prefer the "json" attribute over the "prettyJson" one.
                 // the value on the scope might not be defined yet, so look at the markup.
                 var exp = isDefined(attrs.json) ? 'json' : 'prettyJson',
                     highlight = function highlight(value) {
-                        return isDefined(value) ? elm.html(ngPrettyJsonFunctions.syntaxHighlight(value)) : elm.empty();
+                        return isDefined(value) ? elm.find('pre').html(ngPrettyJsonFunctions.syntaxHighlight(value)) : elm.empty();
                     },
                     objWatch;
 
@@ -29,12 +39,43 @@ angular.module('ngPrettyJson', [])
                         objWatch();
                         scope.$watch(exp + '.json', function (newValue) {
                             highlight(newValue);
+                            currentValue = newValue;
                         }, true);
                     }
-                    else {
+                    else {                        
                         highlight(newValue);
+                        currentValue = newValue;
                     }
                 }, true);
+
+                var editChanges = function(e) {                    
+                    try {
+                        scope.currentValue = JSON.parse(editor.getValue());
+                        scope.parsable = true;
+                    }
+                    catch (error) {scope.parsable = false;}  
+
+                    // trigger update
+                    scope.$apply(function () {});
+                };
+                                   
+                scope.edit = function() { 
+
+                    if (!scope.editActivated) {     
+                        editor = ace.edit(id);
+                        editor.on('change', editChanges);                        
+                        editor.getSession().setMode("ace/mode/json");                        
+                    }
+                    else {
+                        if (editor) { document.getElementById(id).env = null; }
+                        highlight(currentValue);
+                    }
+                    scope.editActivated = !scope.editActivated;
+                };
+
+                scope.update = function() {
+                    scope.$emit('json-updated', scope.newValue);
+                };
             }
         };
     }])
