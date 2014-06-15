@@ -64,7 +64,7 @@ describe('ngPrettyJson', function () {
             var element = testDirective('<pre pretty-json="json"></pre>', 11);
             delete scope.json.json;
             scope.$apply();
-            expect(element.children('span').length).toBe(0);
+            expect(element.find('pre').children('span').length).toBe(0);
         });
     });
 
