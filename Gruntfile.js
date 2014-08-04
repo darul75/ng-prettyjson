@@ -22,18 +22,18 @@ module.exports = function(grunt) {
                 'lib/angular-mocks/angular-mocks.js',
                 'src/ng-prettyjson.js',
                 'test/**/*Spec.js'
-            ]
+            ],
+            autoWatch: true,
+            singleRun: true
         },
         unit: {
             options: {
-                browsers: ['Firefox'],
-                autoWatch: true
+                browsers: ['Firefox']                
             }
         },
         continuous: {
             options: {
-                browsers: ['PhantomJS'],
-                singleRun: true
+                browsers: ['PhantomJS']                
             }
         }
     },
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 
   // TASK REGISTER
     grunt.registerTask('test', ['jshint', 'bower', 'karma:unit']);
-    grunt.registerTask('test-continuous', ['jshint', 'bower', 'karma:continuous']);
+    grunt.registerTask('test-continuous', ['jshint', 'bower', 'karma:unit']);
     grunt.registerTask('build', ['cssmin', 'uglify']);
     grunt.registerTask('default', ['build', 'test']);
 };
