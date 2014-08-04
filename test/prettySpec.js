@@ -18,7 +18,10 @@ describe('ngPrettyJson', function () {
             return function tester(markup, nodeCount) {
                 var element = $compile(markup)(scope);
                 scope.$apply();
-                expect(element.find('pre').children('span').length).toBe(nodeCount || 0);
+                var selCount =  element.find('pre').children('span').length;
+                // console.log(selCount);
+
+                expect(selCount).toBe(nodeCount || 0);
                 //expect(element[0].tagName).toBe('PRE');
                 return element;
             };
@@ -39,29 +42,29 @@ describe('ngPrettyJson', function () {
         });
 
         it('creates an instance with default values', function () {
-            testDirective('<pre json="json" pretty-json></pre>', 11);
+            testDirective('<pre json="json" pretty-json></pre>', 24);
         });
 
         it('uses prettyJson attribute', function () {
-            testDirective('<pre pretty-json="json"></pre>', 11);
+            testDirective('<pre pretty-json="json"></pre>', 24);
         });
 
         it('creates an instance with default values w/o presence of "json" key in obj', function () {
-            testDirective('<pre pretty-json="obj"></pre>', 11);
+            testDirective('<pre pretty-json="obj"></pre>', 24);
         });
 
         it('creates an instance with default values, using element syntax', function () {
-            testDirective('<pretty-json json="json"></pretty-json>', 11);
+            testDirective('<pretty-json json="json"></pretty-json>', 24);
         });
 
         it('ignores updates to the root object if it has a json property', function () {
-            var element = testDirective('<pre pretty-json="json"></pre>', 11);
+            var element = testDirective('<pre pretty-json="json"></pre>', 24);
             scope.$apply("json.f = 'bar'");
-            expect(element.find('pre').children('span').length).toBe(11);
+            expect(element.find('pre').children('span').length).toBe(24);
         });
 
         it('zaps markup if empty', function () {
-            var element = testDirective('<pre pretty-json="json"></pre>', 11);
+            var element = testDirective('<pre pretty-json="json"></pre>', 24);
             delete scope.json.json;
             scope.$apply();
             expect(element.find('pre').children('span').length).toBe(0);

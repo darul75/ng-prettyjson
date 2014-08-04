@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
         unit: {
             options: {
-                browsers: ['Chrome'],
+                browsers: ['Firefox'],
                 autoWatch: true
             }
         },

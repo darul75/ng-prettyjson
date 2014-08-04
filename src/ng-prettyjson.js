@@ -12,9 +12,9 @@ angular.module('ngPrettyJson', [])
             },
             replace: true,
             template: '<div>' + 
-                        '<button ng-click="edit()" ng-show="edition && !editActivated">Edit</button>' +
-                        '<button ng-click="edit()" ng-show="edition && editActivated">Cancel</button>' +
-                        '<button ng-click="update()" ng-show="editActivated && parsable">Update</button>' +
+                        // '<button ng-click="edit()" ng-show="edition && !editActivated">Edit</button>' +
+                        // '<button ng-click="edit()" ng-show="edition && editActivated">Cancel</button>' +
+                        // '<button ng-click="update()" ng-show="editActivated && parsable">Update</button>' +
                         '<pre id="prettyjson"></pre>' +                        
                     '</div>',
             link: function (scope, elm, attrs) {
@@ -27,7 +27,14 @@ angular.module('ngPrettyJson', [])
                 // the value on the scope might not be defined yet, so look at the markup.
                 var exp = isDefined(attrs.json) ? 'json' : 'prettyJson',
                     highlight = function highlight(value) {
-                        return isDefined(value) ? elm.find('pre').html(ngPrettyJsonFunctions.syntaxHighlight(value)) : elm.empty();
+                        var html = ngPrettyJsonFunctions.syntaxHighlight(value) || "";
+                        html = html
+                            .replace(/\{/g, "<span class='sep'>{</span>")
+                            .replace(/\}/g, "<span class='sep'>}</span>")
+                            .replace(/\[/g, "<span class='sep'>[</span>")
+                            .replace(/\]/g, "<span class='sep'>]</span>")
+                            .replace(/\,/g, "<span class='sep'>,</span>");                        
+                        return isDefined(value) ? elm.find('pre').html(html) : elm.empty();
                     },
                     objWatch;
 

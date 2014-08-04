@@ -4,3 +4,4 @@ pre {outline: 1px solid #e9e9e9; padding: 5px; margin: 5px; width: 100%; height:
 .boolean { color: blue; }
 .null { color: magenta; }
 .key { color: red; }
+.sep { color: black; }
