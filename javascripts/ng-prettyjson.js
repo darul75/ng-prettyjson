@@ -77,6 +77,9 @@ angular.module('ngPrettyJson', [])
                         
                     if (!scope.editActivated) {     
                         editor = ace.edit(id);
+                        editor.setOptions({
+                            maxLines: Infinity
+                        });
                         editor.on('change', editChanges);                        
                         editor.getSession().setMode("ace/mode/json");                        
                     }
