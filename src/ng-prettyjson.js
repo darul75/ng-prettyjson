@@ -23,7 +23,7 @@ angular.module('ngPrettyJson', [])
                 
                 scope.editActivated = false;
                 scope.edition = attrs.edition;
-                scope.aceEditor = ace !== undefined;    
+                scope.aceEditor = window.ace !== undefined;    
 
                 // prefer the "json" attribute over the "prettyJson" one.
                 // the value on the scope might not be defined yet, so look at the markup.
