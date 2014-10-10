@@ -11,7 +11,7 @@
 <body>
 
 	<div ng-app='myApp' ng-controller='ctrl'>
-		<pretty-json json="obj" edition="true"></pretty-json>
+		<pretty-json json="obj" edition="true" on-edit="test(newJson)"></pretty-json>
 		<pretty-json json="obj"></pretty-json>
 	</div>
 
@@ -22,9 +22,13 @@
         function ctrl($scope) {
             $scope.obj = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}]};
 
-            $scope.$on('json-updated', function(e, msg) {
-            	console.log(e);
+            $scope.$on('json-updated', function(msg, value) {
+            	console.log(value);
             });
+
+            $scope.test = function(newJson) {
+            	console.log(newJson);
+            }
         }
 	</script>
 
