@@ -36,7 +36,7 @@ angular.module('ngPrettyJson', [])
                             .replace(/\[/g, "<span class='sep'>[</span>")
                             .replace(/\]/g, "<span class='sep'>]</span>")
                             .replace(/\,/g, "<span class='sep'>,</span>");                        
-                        return isDefined(value) ? elm.find('pre').html(html) : '';
+                        return isDefined(value) ? elm.find('pre').html(html) : elm.find('pre').empty();
                     },
                     objWatch;
 
