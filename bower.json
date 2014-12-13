@@ -1,7 +1,7 @@
 {
     "name": "ng-prettyjson",
     "description": "AngularJS directive for json pretty output (colors and indent)",
-    "version": "0.1.3",
+    "version": "0.1.5",
     "author": {
         "name": "Julien Valéry",
         "email": "darul75@gmail.com"
