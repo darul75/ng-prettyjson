@@ -16,11 +16,12 @@ angular.module('ngPrettyJson', [])
                         '<button ng-click="edit()" ng-show="edition && !editActivated">Edit</button>' +
                         '<button ng-click="edit()" ng-show="edition && editActivated">Cancel</button>' +
                         '<button ng-click="update()" ng-show="editActivated && parsable">Update</button>' +
-                        '<pre id="prettyjson"></pre>' +                        
+                        '<pre id="{{id}}"></pre>' +
                     '</div>',
             link: function (scope, elm, attrs) {
-                var currentValue = {}, id = 'prettyjson', editor = null;
+                var currentValue = {}, id = 'prettyjson' + scope.$id, editor = null;
                 
+                scope.id = id;
                 scope.editActivated = false;
                 scope.edition = attrs.edition;
                 scope.aceEditor = window.ace !== undefined;    
