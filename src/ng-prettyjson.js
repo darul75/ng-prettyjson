@@ -55,6 +55,7 @@ angular.module('ngPrettyJson', [])
                         highlight(newValue);
                         currentValue = newValue;
                     }
+                    if (editor) editor.setValue(newValue);
                 }, true);
 
                 var editChanges = function(e) {                    
