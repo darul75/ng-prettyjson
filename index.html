@@ -13,7 +13,10 @@
     <script type="text/javascript" src="src/bower_components/angular/angular.min.js"></script>    
     <script type="text/javascript" src="src/bower_components/requirejs/require.js"></script>    
     <script type="text/javascript" src="javascripts/ace.js"></script>
-    <script type="text/javascript" src="javascripts/ng-prettyjson.min.js"></script>
+    <!--
+    <script type="text/javascript" src="javascripts/ng-prettyjson.min.js"></script>-->
+    <script type="text/javascript" src="javascripts/ng-prettyjson.js"></script>
+    <script type="text/javascript" src="javascripts/ng-prettyjson-tmpl.js"></script>
 
     <script type="text/javascript" src="javascripts/prism.js"></script>
 
@@ -82,7 +85,7 @@
   &lt;script>
     function ctrl($scope) {
         var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};      
-        $scope.json = { json: obj };
+        $scope.json = obj;
     }   
   &lt;/script>
   </code>    
@@ -108,10 +111,10 @@
     function ctrl($scope) {
       var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
       // var obj = function() {};
-      $scope.json = { json: obj };
+      $scope.json = obj;
       
       $scope.change = function() {
-        $scope.json = { json: {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]}};
+        $scope.json = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]};
       };
       
       	var o2 = { 
