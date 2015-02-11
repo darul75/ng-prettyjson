@@ -56,6 +56,7 @@
             <h2>Small json</h2>
 
             <div>
+              <button ng-click="change()">CHANGE</button>
               <pretty-json json="json" edition="true" on-edit="test(newJson)"></pretty-json>
             </div>
 
@@ -80,7 +81,10 @@
   &lt;script>
     function ctrl($scope) {
         var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};      
-        $scope.json = { json: obj };     
+        $scope.json = { json: obj };
+         $scope.change = function() {
+                $scope.obj = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]};
+            };
     }   
   &lt;/script>
   </code>    
