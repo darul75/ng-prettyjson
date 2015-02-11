@@ -55,15 +55,20 @@ angular.module('ngPrettyJson', [])
         if (angular.isObject(newValue) && isDefined(newValue.json)) {
           objWatch();
           scope.$watch(exp + '.json', function (newValue) {
-            highlight(newValue);
+            if (!scope.editActivated) highlight(newValue);
             currentValue = newValue;
           }, true);
         }
-        else {                        
-          highlight(newValue);
+        else {                      
+          if (!scope.editActivated) highlight(newValue);            
           currentValue = newValue;
         }
-        if (editor) editor.setValue(newValue);
+        if (editor) {
+          editor.removeListener('change', editChanges);
+          editor.setValue(JSON.stringify(newValue, null, '\t'));
+          editor.on('change', editChanges);
+          editor.resize();
+        }
       }, true);
 
       var editChanges = function(e) {                    
@@ -86,6 +91,7 @@ angular.module('ngPrettyJson', [])
 
         if (!scope.editActivated) {     
           editor = ace.edit(scope.id);
+          editor.setAutoScrollEditorIntoView(true);    
           editor.setOptions({maxLines: Infinity});
           editor.on('change', editChanges);                        
           editor.getSession().setMode("ace/mode/json");                        
@@ -98,6 +104,7 @@ angular.module('ngPrettyJson', [])
       };
 
       scope.update = function() {
+        scope[exp] = currentValue;
         scope.$emit('json-updated', currentValue);
         if (scope.onEdit)
           scope.onEdit({newJson: currentValue});
