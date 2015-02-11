@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="javascripts/ng-prettyjson.min.css">
 
     <script type="text/javascript" src="src/bower_components/angular/angular.min.js"></script>    
+    <script type="text/javascript" src="src/bower_components/requirejs/require.js"></script>    
     <script type="text/javascript" src="javascripts/ace.js"></script>
     <script type="text/javascript" src="javascripts/ng-prettyjson.min.js"></script>
 
@@ -93,14 +94,7 @@
 
             <div>
           	<pre json='json2' pretty-json />
-            </div>
-
-            <h2>Donate</h2>   
-              <div>
-              	<script data-gittip-username="darul75"
-                  data-gittip-widget="button"
-                  src="//gttp.co/v1.js"></script>
-              </div>
+            </div>            
           
         </div>
 
@@ -117,7 +111,7 @@
       $scope.json = { json: obj };
       
       $scope.change = function() {
-        $scope.json = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]};
+        $scope.json = { json: {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]}};
       };
       
       	var o2 = { 
@@ -204,13 +198,13 @@
     </script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ /* (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-45895157-4', 'darul75.github.io');
-  ga('send', 'pageview');
+  ga('send', 'pageview');*/
 
 </script>
 
