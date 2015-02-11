@@ -93,7 +93,7 @@ Alternatively, you can use a `<pretty-json>` tag.  This tag will be replaced wit
 RELEASE
 -------------
 
-* 2.1.9: fix labels positions while gluing, gap was too big + options changed watch by value
+* 0.1.7: fix several "id" and compliance with ace editor
 
 ### Build
 
