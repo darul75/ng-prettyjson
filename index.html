@@ -82,9 +82,6 @@
     function ctrl($scope) {
         var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};      
         $scope.json = { json: obj };
-         $scope.change = function() {
-                $scope.json = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]};
-            };
     }   
   &lt;/script>
   </code>    
@@ -118,6 +115,10 @@
       var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
       // var obj = function() {};
       $scope.json = { json: obj };
+      
+      $scope.change = function() {
+        $scope.json = {a: 1, 'b': 'foo', c: [false, null, {d: {e: 1.3e5}}], e: [false, null, {d: {e: 1.3e5}}], f: [false, null, {d: {e: 1.3e5}}]};
+      };
       
       	var o2 = { 
 				socket: 
