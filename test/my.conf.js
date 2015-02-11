@@ -16,7 +16,8 @@ module.exports = function(config) {
     files: [
       'lib/angular/angular.min.js',
       'lib/angular-mocks/angular-mocks.js',
-      'src/*.js',
+      'src/ng-prettyjson.js',
+      'src/ng-prettyjson-tmpl.js',
       'test/*Spec.js'
     ],
 
@@ -67,6 +68,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    singleRun: false
   });
 };

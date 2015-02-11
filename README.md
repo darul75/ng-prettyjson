@@ -90,6 +90,11 @@ Alternatively, you can use a `<pretty-json>` tag.  This tag will be replaced wit
 <pretty-json json="jsonObj"></pretty-json>
 ```
 
+RELEASE
+-------------
+
+* 2.1.9: fix labels positions while gluing, gap was too big + options changed watch by value
+
 ### Build
 
 You can run the tests by running

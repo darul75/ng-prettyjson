@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['src/ng-prettyjson.js', 'test/**/*.js']
+      files: ['src/ng-prettyjson.js', 'src/ng-prettyjson-tmpl.js', 'test/**/*.js']
     },
     // KARMA TASK CONFIG
     karma: {
@@ -21,6 +21,7 @@ module.exports = function(grunt) {
                 'lib/angular/angular.js',
                 'lib/angular-mocks/angular-mocks.js',
                 'src/ng-prettyjson.js',
+                'src/ng-prettyjson-tmpl.js',
                 'test/**/*Spec.js'
             ],
             autoWatch: true,
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
              '* License: MIT \n**/\n'
          },         
          files: {
-             'dist/ng-prettyjson.min.js': ['src/ng-prettyjson.js']
+             'dist/ng-prettyjson.min.js': ['src/ng-prettyjson.js', 'src/ng-prettyjson-tmpl.js']
          }
        }
      },

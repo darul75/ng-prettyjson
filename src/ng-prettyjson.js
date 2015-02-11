@@ -1,29 +1,37 @@
+(function(angular) {
+'use strict';
+
 angular.module('ngPrettyJson', [])
-.directive('prettyJson', ['ngPrettyJsonFunctions', function (ngPrettyJsonFunctions) {
-  'use strict';
+.directive('prettyJson', ['$compile', '$templateCache', 'ngPrettyJsonFunctions', 
+  function (compile, templateCache, ngPrettyJsonFunctions) {
 
   var isDefined = angular.isDefined;
 
-  return {
+  return {    
     restrict: 'AE',
     scope: {
       json: '=',
       prettyJson: '=',
       onEdit: '&'
     },
-    replace: true,
-    template: '<div>' + 
-    '<button ng-click="edit()" ng-show="edition && !editActivated">Edit</button>' +
-    '<button ng-click="edit()" ng-show="edition && editActivated">Cancel</button>' +
-    '<button ng-click="update()" ng-show="editActivated && parsable">Update</button>' +
-    '<pre id="prettyjson" class="pretty-json"></pre>' +                        
-    '</div>',
+    template: '<div></div>',
+    replace: true,      
     link: function (scope, elm, attrs) {
-      var currentValue = {}, id = 'prettyjson', editor = null;
+      var currentValue = {}, editor = null, clonedElement = null;
+
+      scope.id = attrs.id || 'prettyjson';
 
       scope.editActivated = false;
       scope.edition = attrs.edition;
       scope.aceEditor = window.ace !== undefined;    
+
+      // compile template
+      var e = compile(templateCache.get('ng-prettyjson/ng-prettyjson-panel.tmpl.html'))(scope, function(clonedElement, scope) {          
+        scope.tmplElt = clonedElement;        
+      });
+      
+      elm.removeAttr("id");
+      elm.append(e);
 
       // prefer the "json" attribute over the "prettyJson" one.
       // the value on the scope might not be defined yet, so look at the markup.
@@ -36,7 +44,7 @@ angular.module('ngPrettyJson', [])
         .replace(/\[/g, "<span class='sep'>[</span>")
         .replace(/\]/g, "<span class='sep'>]</span>")
         .replace(/\,/g, "<span class='sep'>,</span>");                        
-        return isDefined(value) ? elm.find('pre').html(html) : elm.find('pre').empty();
+        return isDefined(value) ? scope.tmplElt.find('pre').html(html) : scope.tmplElt.find('pre').empty();
       },
       objWatch;
 
@@ -77,13 +85,13 @@ angular.module('ngPrettyJson', [])
         }
 
         if (!scope.editActivated) {     
-          editor = ace.edit(id);
+          editor = ace.edit(scope.id);
           editor.setOptions({maxLines: Infinity});
           editor.on('change', editChanges);                        
           editor.getSession().setMode("ace/mode/json");                        
         }
         else {
-          if (editor) { document.getElementById(id).env = null; }
+          if (editor) { document.getElementById(scope.id).env = null; }
           highlight(currentValue);
         }
         scope.editActivated = !scope.editActivated;
@@ -95,10 +103,11 @@ angular.module('ngPrettyJson', [])
           scope.onEdit({newJson: currentValue});
         this.edit();
       };
+
+      
     }
   };
 }])
-
 // mostly we want to just expose this stuff for unit testing; if it's within the directive's
 // function scope, we can't get to it.
 .factory('ngPrettyJsonFunctions', function ngPrettyJsonFunctions() {
@@ -181,3 +190,5 @@ angular.module('ngPrettyJson', [])
     rx: rx
   };
 });
+
+})(window.angular);

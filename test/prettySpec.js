@@ -2,7 +2,7 @@ describe('ngPrettyJson', function () {
     var testDirective,
         noop = angular.noop,
         scope,
-        fixture = function fixture($compile, $rootScope) {
+        fixture = function fixture($compile, $rootScope, $timeout) {
             scope = $rootScope.$new();
             scope.obj = obj;
             scope.badjson = noop;
@@ -16,14 +16,20 @@ describe('ngPrettyJson', function () {
              * @param {number} [nodeCount] Number of <span> nodes expected; defaults to 0
              */
             return function tester(markup, nodeCount) {
-                var element = $compile(markup)(scope);
-                scope.$apply();
-                var selCount =  element.find('pre').children('span').length;
+                var elt = angular.element(markup);
+                elt = $compile(elt)(scope); // Compile the directive                
+                scope.$digest(); // Update the HTML
+
+                // $timeout.flush(2000);                
+                
+                angular.element(document.body).append(elt);
+
+                var selCount =  elt.find('pre').children('span').length;
                 // console.log(selCount);
 
                 expect(selCount).toBe(nodeCount || 0);
                 //expect(element[0].tagName).toBe('PRE');
-                return element;
+                return elt;
             };
         },
 
@@ -42,7 +48,7 @@ describe('ngPrettyJson', function () {
         });
 
         it('creates an instance with default values', function () {
-            testDirective('<pre json="json" pretty-json></pre>', 24);
+            testDirective('<pre json="json" pretty-json id="toto"></pre>', 24);
         });
 
         it('uses prettyJson attribute', function () {
