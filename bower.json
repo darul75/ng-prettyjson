@@ -11,10 +11,10 @@
     "./src/ng-prettyjson.js",
     "./src/ng-prettyjson.css"
   ],
-  "homepage": "https://github.com/sovanna/ng-prettyjson",
+  "homepage": "https://github.com/darul75/ng-prettyjson",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sovanna/ng-prettyjson.git"
+    "url": "https://github.com/darul75/ng-prettyjson.git"
   },
   "keywords": [
     "angular",
