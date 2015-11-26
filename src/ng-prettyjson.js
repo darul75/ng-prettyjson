@@ -81,7 +81,7 @@ angular.module('ngPrettyJson', [])
         // trigger update
         scope.$apply(function () {});
       };
-
+      var valueBeforeEdition = currentValue;
       scope.edit = function() { 
         if (!scope.aceEditor) {
           if (console)
@@ -90,6 +90,7 @@ angular.module('ngPrettyJson', [])
         }
 
         if (!scope.editActivated) {     
+          valueBeforeEdition = currentValue;
           editor = ace.edit(scope.id);
           editor.setAutoScrollEditorIntoView(true);    
           editor.setOptions({maxLines: Infinity});
@@ -98,7 +99,9 @@ angular.module('ngPrettyJson', [])
         }
         else {
           if (editor) { document.getElementById(scope.id).env = null; }
-          highlight(currentValue);
+          highlight(valueBeforeEdition);
+          currentValue = valueBeforeEdition;
+          scope.parsable = false;
         }
         scope.editActivated = !scope.editActivated;
       };
