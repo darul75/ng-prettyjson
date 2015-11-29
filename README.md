@@ -93,7 +93,7 @@ Alternatively, you can use a `<pretty-json>` tag.  This tag will be replaced wit
 RELEASE
 -------------
 
-* 0.1.9: fix behavior when clicking on cancel button
+* 0.2.0: fix behavior when clicking on cancel button
 * 0.1.8: fix ace editor resize and json $watch change binding
 * 0.1.7: fix several "id" and compliance with ace editor
 

@@ -1,5 +1,5 @@
 /** 
-* @license ng-prettyjson - v0.1.9
+* @license ng-prettyjson - v0.2.0
 * (c) 2013 Julien VALERY https://github.com/darul75/ng-prettyjson
 * License: MIT 
 **/
