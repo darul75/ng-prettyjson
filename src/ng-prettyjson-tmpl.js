@@ -8,7 +8,7 @@
     '<button type="button" ng-click="edit()" ng-show="edition && !editActivated">Edit</button>' +
     '<button type="button" ng-click="edit()" ng-show="edition && editActivated">Cancel</button>' +
     '<button type="button" ng-click="update()" ng-show="editActivated && parsable">Update</button>' +
-    '<pre class="pretty-json" id="{{id}}"></pre>' +                        
+    '<pre class="pretty-json ace_editor ace-tm" id="{{id}}"></pre>' +                        
     '</div>');
   }]);
 

@@ -14,12 +14,18 @@ angular.module('ngPrettyJson', [])
       prettyJson: '=',
       onEdit: '&'
     },
-    template: '<div></div>',
     replace: true,      
-    link: function (scope, elm, attrs) {
+    link: function (scope, element, attrs) {
       var currentValue = {}, editor = null, clonedElement = null;
 
-      scope.id = attrs.id || 'prettyjson';
+      var getRandomId = function() {
+          var min = 1;
+          var max = 10000;
+          var randomId = Math.floor(Math.random() * (max - min)) + min;
+          return randomId;
+      }
+
+      scope.id = attrs.id || 'jsonEditor' + getRandomId();
 
       scope.editActivated = false;
       scope.edition = attrs.edition;
@@ -30,8 +36,8 @@ angular.module('ngPrettyJson', [])
         scope.tmplElt = clonedElement;        
       });
       
-      elm.removeAttr("id");
-      elm.append(e);
+      element.removeAttr("id");
+      element.append(e);
 
       // prefer the "json" attribute over the "prettyJson" one.
       // the value on the scope might not be defined yet, so look at the markup.
@@ -85,7 +91,7 @@ angular.module('ngPrettyJson', [])
       scope.edit = function() { 
         if (!scope.aceEditor) {
           if (console)
-            console.log('\'ace lib is missing\'');
+            console.error('\'ace lib is missing\'');
           return;
         }
 
