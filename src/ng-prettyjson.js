@@ -23,7 +23,7 @@ angular.module('ngPrettyJson', [])
           var max = 10000;
           var randomId = Math.floor(Math.random() * (max - min)) + min;
           return randomId;
-      }
+      };
 
       scope.id = attrs.id || 'jsonEditor' + getRandomId();
 
