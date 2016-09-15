@@ -192,7 +192,7 @@ angular.module('ngPrettyJson', [])
    */
    var syntaxHighlight = function syntaxHighlight(json) {
     if (!angular.isString(json))
-      json = JSON.stringify(json, null, 2);
+      json = JSON.stringify(angular.copy(json), null, 2);
     if (angular.isDefined(json)) {
       return json.replace(rx.entities, makeEntities)
       .replace(rx.json, markup);
