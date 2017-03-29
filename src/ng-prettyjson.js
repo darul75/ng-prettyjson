@@ -12,6 +12,7 @@ angular.module('ngPrettyJson', [])
     scope: {
       json: '=',
       prettyJson: '=',
+      edition: '=',
       onEdit: '&'
     },
     replace: true,      
@@ -28,7 +29,6 @@ angular.module('ngPrettyJson', [])
       scope.id = attrs.id || 'jsonEditor' + getRandomId();
 
       scope.editActivated = false;
-      scope.edition = attrs.edition;
       scope.aceEditor = window.ace !== undefined;    
 
       // compile template
